@@ -1,0 +1,20 @@
+{
+    "name": "chriha/project-cli-dev",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Hartmann",
+            "email": "chriha84@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~7.1|~7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chriha\\ProjectCLI\\": "src/"
+        }
+    }
+}
