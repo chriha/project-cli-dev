@@ -13,6 +13,9 @@ use Symfony\Component\Process\Process;
  *
  * @property OutputInterface $output
  * @property InputInterface $input
+ * @property bool $requiresProject
+ * @property bool $hasDynamicOptions
+ * @property bool $inProject
  * @method array additionalArgs( int $index = null )
  * @method argument( string $key )
  * @method option( string $key )
