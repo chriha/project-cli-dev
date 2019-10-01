@@ -2,35 +2,46 @@
 
 namespace Chriha\ProjectCLI\Commands;
 
+use Closure;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\OutputStyle;
 use Symfony\Component\Process\Process;
 
 /**
  * Class Command
  * @package Chriha\ProjectCLI\Commands
  *
- * @property OutputInterface $output
+ * @property bool $requiresProject = false
+ * @property bool $hasDynamicOptions = false
+ * @property OutputStyle $output
  * @property InputInterface $input
- * @property bool $requiresProject
- * @property bool $hasDynamicOptions
- * @property bool $inProject
+ * @property bool $inProject = false
+ * @method void __construct( string $name = null )
  * @method array additionalArgs( int $index = null )
- * @method argument( string $key )
- * @method option( string $key )
  * @method int call( $command, array $arguments = [] )
- * @method void exit( ?string $message )
- * @method ask( string $message, $default = null )
- * @method void info( string $message )
+ * @method Process spinner( string $title, Process $process, Closure $output = null )
+ * @method void table( array $headers, array $rows, $tableStyle = 'default', array $columnStyles = [] )
+ * @method void abort( string $message ) : void
+ * @method mixed ask( string $question, $default = null, $validator = null )
+ * @method void info( string $string ) : void
  * @method void line( $string, $style = null )
- * @method void warn( $string ) A nice description
- * @method bool task( string $title, \Closure $task = null, $loadingText = 'loading ...' )
- * @method confirm( string $question, bool $default = false )
- * @method spinner( string $title, Process $process, \Closure $output = null )
- * @method void table( array $headers, array $rows, $style = 'borderless' )
+ * @method void example( string $command ) : void
+ * @method void warn( $string )
+ * @method mixed confirm( string $question, bool $default = true )
+ * @method void alert( $string )
+ * @method void comment( $string )
+ * @method mixed anticipate( $question, array $choices, $default = null )
+ * @method mixed askWithCompletion( $question, array $choices, $default = null )
+ * @method string choice( $question, array $choices, $default = null, $attempts = null, $multiple = null )
+ * @method void question( $string )
+ * @method void error( $string )
+ * @method void step( $text )
+ * @method mixed secret( $question )
+ * @method bool task( string $title, Closure $task = null, $loadingText = 'loading ...' )
+ * @method mixed argument( $key )
+ * @method mixed option( $key )
  */
-class Command extends SymfonyCommand
+abstract class Command extends SymfonyCommand
 {
 
 }

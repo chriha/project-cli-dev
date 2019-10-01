@@ -6,23 +6,17 @@ namespace Chriha\ProjectCLI;
  * Class Helpers
  * @package Chriha\ProjectCLI
  *
- * @method static abort( $text )
  * @method static app( $name = null )
- * @method static string projectPath( string $path = '' )
- * @method static string rootPath( string $path = '' )
- * @method static string configFile( string $path = '' )
- * @method static ask( $question, $default = null )
- * @method static comment( $text )
- * @method static confirm( $question, $default = true )
- * @method static danger( $text )
- * @method static info( $text )
- * @method static line( $text = '' )
- * @method static secret( $question )
- * @method static step( $text )
- * @method static table( array $headers, array $rows, $style = 'borderless' )
- * @method static time_ago( $date )
- * @method static write( $text )
+ * @method static ?string projectPath( string $path = '' )
+ * @method static ?string home( string $path = '' )
+ * @method static void line( $text = '' )
+ * @method static void danger( $text )
+ * @method static void abort( $text )
+ * @method static string timeAgo( $date )
  * @method static string mbStrReverse( string $string )
+ * @method static bool commandExists( string $command )
+ * @method static ?string searchInFile( string $search, string $file )
+ * @method static ?string findNamespace( string $file )
  */
 class Helpers
 {
