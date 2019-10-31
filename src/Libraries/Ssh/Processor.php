@@ -14,7 +14,6 @@ use Symfony\Component\Console\Style\OutputStyle;
  * @method void __construct( OutputStyle $output, Connection $connection, bool $break = true )
  * @method int run( string $title, $command, Closure $callback = null )
  * @method int copy( string $title, string $source, string $target, Closure $callback = null )
- * @method Processor composerInstall( string $path )
  * @method Process getProcess( $script )
  */
 class Processor

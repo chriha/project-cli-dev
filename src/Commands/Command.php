@@ -11,14 +11,22 @@ use Symfony\Component\Process\Process;
  * Class Command
  * @package Chriha\ProjectCLI\Commands
  *
+ * @property string static $defaultName = null;
+ * @property string $description
  * @property bool $requiresProject = false
  * @property bool $hasDynamicOptions = false
+ * @property array $dynamicOptions = []
  * @property OutputStyle $output
  * @property InputInterface $input
- * @property bool $inProject = false
+ * @property \Psr\Log\LoggerInterface $logger
+ *
  * @method void __construct( string $name = null )
  * @method array additionalArgs( int $index = null )
- * @method int call( $command, array $arguments = [] )
+ * @method int call( $command, array $arguments = [], bool $showOutput = true )
+ * @method self addDynamicOptions()
+ * @method self addDynamicArguments()
+ * @method bool static isActive()
+ *
  * @method Process spinner( string $title, Process $process, Closure $output = null )
  * @method void table( array $headers, array $rows, $tableStyle = 'default', array $columnStyles = [] )
  * @method void abort( string $message ) : void
@@ -38,8 +46,12 @@ use Symfony\Component\Process\Process;
  * @method void step( $text )
  * @method mixed secret( $question )
  * @method bool task( string $title, Closure $task = null, $loadingText = 'loading ...' )
- * @method mixed argument( $key )
- * @method mixed option( $key )
+ *
+ * @method mixed argument( string $key )
+ * @method mixed option( string $key )
+ * @method bool hasArgument( string $key )
+ * @method bool hasOption( string $key )
+ * @method array getParameters( array $prepend ) Returns the provided parameters for the command
  */
 abstract class Command extends SymfonyCommand
 {
