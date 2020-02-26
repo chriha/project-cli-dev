@@ -1,5 +1,5 @@
 # ProjectCLI Dev Package
-Use this package to create command specifically for your project or as a plugin.
+Use this package for auto completion of ProjectCLI commands.
 
 ## Installation
 
