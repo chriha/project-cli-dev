@@ -8,7 +8,7 @@ use Symfony\Component\Process\Process;
  * Class Docker
  * @package Chriha\ProjectCLI\Services
  *
- * @method ?string config()
+ * @method string|null config()
  * @method Process run(array $commands, string $cwd = null)
  * @method Process process(array $commands = [])
  * @method Process exec(string $service, array $commands = [], bool $tty = true)
